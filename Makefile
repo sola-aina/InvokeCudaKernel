@@ -7,6 +7,8 @@ NVCC_FLGS = -G -lineinfo
 libCudaKernels.a: $(SOURCES:%.cu=%.o) $(SOURCES:%.cu=%.dlink.o)
 	ar rvs -o ./$@ $^
 
+# Note: the values of arch are for reference only, compatible with the now ancient mobile Fermi GPU on my laptop
+# Suggest: use more appropriate values based on your GPU
 %.a : %.dlink.o %.o
 	$(CUDA_PATH)/bin/nvcc $(NVCC_FLGS) -ccbin g++-5 -m64 -gencode arch=compute_30,code=sm_30 -lib -o $@ $^
 

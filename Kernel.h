@@ -4,7 +4,7 @@
 
 #define DEFINE_KERNEL( Kernel )
 
-// 
+// Register all function here
 #define KERNEL_REFERENCES		\
 	DEFINE_KERNEL( Kernel1 )	\
 	DEFINE_KERNEL( Kernel2 )	\
